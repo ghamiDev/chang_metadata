@@ -7,6 +7,11 @@ import random
 import json
 import base64
 
+import shutil
+if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
+    st.error("⚠️ FFmpeg belum terpasang di server. Tambahkan 'ffmpeg' di packages.txt atau install manual.")
+    st.stop()
+
 st.set_page_config(page_title="Auto Video Metadata Manager", page_icon="🎬", layout="centered")
 
 st.title("🎬 Auto Video Metadata Cleaner & Random Rewriter")
